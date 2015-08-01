@@ -1,0 +1,24 @@
+myname = 'balasesh';
+answer{1} = sym('[0.2818,0.7182; -0.1140,0.1140; 0.1316,-0.1316]');
+answer{2}= sym('0.30');
+answer{3}= sym('[-0.4103;0.4739]');
+answer{4}= sym('-0.7856');
+answer(5) = sym('symprod((y(n) ^ t(n))*((1 - y(n))^(1 - t(n))),n,1,N)');
+answer(6) = sym('-(symsum(t(n)*log(y(n))+(1 - t(n))*log(1 - y(n)),n,1,N ))');
+answer(7) = sym(' w^(T + 1) = w^(T) - eta * (y(n) - t(n))*phi(n)');
+answer(8) = sym('w^new = w^old - inv(H) * delta(e(W))');
+answer(9) = sym('e(W) + (lambda/2)*((symsum(symsum((w(j)(i))^2,i,1,D+1),j,1,M)) + (symsum(symsum((w(k)(j))^2,j,1,M+1),k,1,K)))');
+
+%answer(10) = sym('w(0) - eta*h(a(0)) * symsum(w(k0)*delta(k),k)*z(0)');
+%answer(11) = sym('w(1) - eta*h(a(1)) * symsum(w(k1)*delta(k),k)*z(1)');
+%answer(12) = sym('w(2) - eta*h(a(2)) * symsum(w(k2)*delta(k),k)*z(2)');
+
+answer(13) = sym('zigma(symsum((w(k)(j)) * tanh(symsum((w(j)(i))*x(i)+w(j)(0),i,1,D))+ w(k)(0),j,1,M))');
+answer(14) = sym('-(symsum(symsum(t(n)(k)*log(y(n)(k))+(1-t(n)(k))*log(1-y(n)(k)),k,1,K),n,1,N))');
+
+%answer(15) = sym('delta(j)/(delta(k)(j)*zigma(a(j)))');
+%answer(16) = 
+%answer(17) = sym('delta(j) * x(i)');
+%answer(18) = sym('delta(k) * z(j)');
+
+

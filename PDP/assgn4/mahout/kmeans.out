@@ -1,0 +1,592 @@
+SLURM Environment Variables:
+Job ID = 3097207
+Job Name = mahout_kmeans
+Job Node List = k08n36s02,k08n37s02
+Number of Nodes = 2
+Tasks per node = 2
+CPUs per task = 
+/scratch/jobid = /scratch/3097207
+Submit Host = k07n14
+Submit Directory = /ifs/user/balasesh/assgn4/mahout
+
+
+Currently Loaded Modulefiles:
+  1) null                          4) hadoop/0.20.1
+  2) modules                       5) myhadoop/0.2a/hadoop-0.20.1
+  3) java/j2sdk/1.6.0_22           6) mahout/0.8
+MY_HADOOP_HOME=/util/myhadoop/myHadoop-0.2a
+HADOOP_HOME=/util/hadoop/hadoop-0.20.1
+MAHOUT_HOME=/util/mahout/mahout-distribution-0.8
+MyHadoop config directory=/ifs/user/balasesh/assgn4/mahout/config
+Set up the configurations for myHadoop
+Number of nodes in nodelist=2
+Number of Hadoop nodes requested: 2
+Generation Hadoop configuration in directory: /ifs/user/balasesh/assgn4/mahout/config
+Not persisting HDFS state
+Received 2 nodes from PBS
+Master is: k08n36s02
+Configuring node: k08n36s02
+rm -rf /scratch/hadoop-balasesh/log; mkdir -p /scratch/hadoop-balasesh/log
+rm -rf /scratch/hadoop-balasesh/data; mkdir -p /scratch/hadoop-balasesh/data
+Configuring node: k08n37s02
+rm -rf /scratch/hadoop-balasesh/log; mkdir -p /scratch/hadoop-balasesh/log
+rm -rf /scratch/hadoop-balasesh/data; mkdir -p /scratch/hadoop-balasesh/data
+
+Format HDFS
+14/12/07 19:31:52 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = k08n36s02/10.111.8.136
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 0.20.1
+STARTUP_MSG:   build = http://svn.apache.org/repos/asf/hadoop/common/tags/release-0.20.1-rc1 -r 810220; compiled by 'oom' on Tue Sep  1 20:55:56 UTC 2009
+************************************************************/
+14/12/07 19:31:52 INFO namenode.FSNamesystem: fsOwner=balasesh,cse603f14,u2
+14/12/07 19:31:52 INFO namenode.FSNamesystem: supergroup=supergroup
+14/12/07 19:31:52 INFO namenode.FSNamesystem: isPermissionEnabled=true
+14/12/07 19:31:52 INFO common.Storage: Image file of size 98 saved in 0 seconds.
+14/12/07 19:31:52 INFO common.Storage: Storage directory /scratch/hadoop-balasesh/data/dfs/name has been successfully formatted.
+14/12/07 19:31:52 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at k08n36s02/10.111.8.136
+************************************************************/
+
+start dfs
+starting namenode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n36s02-namenode-k08n36s02.out
+k08n36s02: starting datanode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n36s02-datanode-k08n36s02.out
+k08n37s02: starting datanode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n37s02-datanode-k08n37s02.out
+k08n36s02: starting secondarynamenode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n36s02-secondarynamenode-k08n36s02.out
+
+start jobtracker (mapred)
+starting jobtracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n36s02-jobtracker-k08n36s02.out
+k08n36s02: starting tasktracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n36s02-tasktracker-k08n36s02.out
+k08n37s02: starting tasktracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_k08n37s02-tasktracker-k08n37s02.out
+
+------- make directory ----
+------- copy training data to dfs---
+------- list files in dfs---
+Found 1 items
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:32 /data/tweets-seq
+-------Using mahout to transform the training data into vectors using tfidf weights ---
+CLASSPATH with MAHOUT=:/util/mahout/mahout-distribution-0.8/src/conf
+MAHOUT_LOCAL is not set; adding HADOOP_CONF_DIR to classpath.
+CLASSPATH with HADOOP=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config
+CLASSPATH with JAVA=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config:/util/java/jdk1.6.0_22//lib/tools.jar
+Running on hadoop, using /util/hadoop/hadoop-0.20.1/bin/hadoop and HADOOP_CONF_DIR=/ifs/user/balasesh/assgn4/mahout/config
+MAHOUT-JOB: /util/mahout/mahout-distribution-0.8/examples/target/mahout-examples-0.8-job.jar
+14/12/07 19:32:49 INFO vectorizer.SparseVectorsFromSequenceFiles: Maximum n-gram size is: 1
+14/12/07 19:32:49 INFO vectorizer.SparseVectorsFromSequenceFiles: Minimum LLR value: 1.0
+14/12/07 19:32:49 INFO vectorizer.SparseVectorsFromSequenceFiles: Number of reduce tasks: 1
+14/12/07 19:32:49 INFO vectorizer.SparseVectorsFromSequenceFiles: Tokenizing documents in /data/tweets-seq
+14/12/07 19:32:57 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:32:58 INFO mapred.JobClient: Running job: job_201412071932_0001
+14/12/07 19:32:59 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:33:13 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:33:15 INFO mapred.JobClient: Job complete: job_201412071932_0001
+14/12/07 19:33:15 INFO mapred.JobClient: Counters: 6
+14/12/07 19:33:15 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:33:15 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:33:15 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:33:15 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:33:15 INFO mapred.JobClient:     HDFS_BYTES_READ=83935
+14/12/07 19:33:15 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=77280
+14/12/07 19:33:15 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:33:15 INFO mapred.JobClient:     Map input records=538
+14/12/07 19:33:15 INFO mapred.JobClient:     Spilled Records=0
+14/12/07 19:33:15 INFO vectorizer.SparseVectorsFromSequenceFiles: Creating Term Frequency Vectors
+14/12/07 19:33:15 INFO vectorizer.DictionaryVectorizer: Creating dictionary from /data/tweets-vectors/tokenized-documents and saving at /data/tweets-vectors/wordcount
+14/12/07 19:33:15 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:33:16 INFO mapred.JobClient: Running job: job_201412071932_0002
+14/12/07 19:33:17 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:33:28 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:33:40 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:33:42 INFO mapred.JobClient: Job complete: job_201412071932_0002
+14/12/07 19:33:42 INFO mapred.JobClient: Counters: 17
+14/12/07 19:33:42 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:33:42 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:33:42 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:33:42 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:33:42 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:33:42 INFO mapred.JobClient:     FILE_BYTES_READ=56231
+14/12/07 19:33:42 INFO mapred.JobClient:     HDFS_BYTES_READ=77280
+14/12/07 19:33:42 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=112494
+14/12/07 19:33:42 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=24163
+14/12/07 19:33:42 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:33:42 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:33:42 INFO mapred.JobClient:     Combine output records=3225
+14/12/07 19:33:42 INFO mapred.JobClient:     Map input records=538
+14/12/07 19:33:42 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:33:42 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:33:42 INFO mapred.JobClient:     Spilled Records=6450
+14/12/07 19:33:42 INFO mapred.JobClient:     Map output bytes=119239
+14/12/07 19:33:42 INFO mapred.JobClient:     Combine input records=8333
+14/12/07 19:33:42 INFO mapred.JobClient:     Map output records=8333
+14/12/07 19:33:42 INFO mapred.JobClient:     Reduce input records=3225
+14/12/07 19:33:43 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:33:43 INFO mapred.JobClient: Running job: job_201412071932_0003
+14/12/07 19:33:44 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:33:56 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:34:08 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:34:10 INFO mapred.JobClient: Job complete: job_201412071932_0003
+14/12/07 19:34:10 INFO mapred.JobClient: Counters: 17
+14/12/07 19:34:10 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:34:10 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:34:10 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:34:10 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:34:10 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:34:10 INFO mapred.JobClient:     FILE_BYTES_READ=93348
+14/12/07 19:34:10 INFO mapred.JobClient:     HDFS_BYTES_READ=77280
+14/12/07 19:34:10 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=146668
+14/12/07 19:34:10 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=91398
+14/12/07 19:34:10 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:34:10 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:34:10 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:34:10 INFO mapred.JobClient:     Map input records=538
+14/12/07 19:34:10 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:34:10 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:34:10 INFO mapred.JobClient:     Spilled Records=1076
+14/12/07 19:34:10 INFO mapred.JobClient:     Map output bytes=72167
+14/12/07 19:34:10 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:34:10 INFO mapred.JobClient:     Map output records=538
+14/12/07 19:34:10 INFO mapred.JobClient:     Reduce input records=538
+14/12/07 19:34:10 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:34:11 INFO mapred.JobClient: Running job: job_201412071932_0004
+14/12/07 19:34:12 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:34:23 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:34:35 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:34:37 INFO mapred.JobClient: Job complete: job_201412071932_0004
+14/12/07 19:34:37 INFO mapred.JobClient: Counters: 17
+14/12/07 19:34:37 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:34:37 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:34:37 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:34:37 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:34:37 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:34:37 INFO mapred.JobClient:     FILE_BYTES_READ=87710
+14/12/07 19:34:37 INFO mapred.JobClient:     HDFS_BYTES_READ=91398
+14/12/07 19:34:37 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=175452
+14/12/07 19:34:37 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=91398
+14/12/07 19:34:37 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:34:37 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:34:37 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:34:37 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:34:37 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:34:37 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:34:37 INFO mapred.JobClient:     Spilled Records=1024
+14/12/07 19:34:37 INFO mapred.JobClient:     Map output bytes=86352
+14/12/07 19:34:37 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:34:37 INFO mapred.JobClient:     Map output records=512
+14/12/07 19:34:37 INFO mapred.JobClient:     Reduce input records=512
+14/12/07 19:34:37 INFO common.HadoopUtil: Deleting /data/tweets-vectors/partial-vectors-0
+14/12/07 19:34:37 INFO vectorizer.SparseVectorsFromSequenceFiles: Calculating IDF
+14/12/07 19:34:37 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:34:38 INFO mapred.JobClient: Running job: job_201412071932_0005
+14/12/07 19:34:39 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:34:50 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:35:02 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:35:04 INFO mapred.JobClient: Job complete: job_201412071932_0005
+14/12/07 19:35:04 INFO mapred.JobClient: Counters: 17
+14/12/07 19:35:04 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:35:04 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:35:04 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:35:04 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:35:04 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:35:04 INFO mapred.JobClient:     FILE_BYTES_READ=14916
+14/12/07 19:35:04 INFO mapred.JobClient:     HDFS_BYTES_READ=91398
+14/12/07 19:35:04 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=29864
+14/12/07 19:35:04 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=21593
+14/12/07 19:35:04 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:35:04 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:35:04 INFO mapred.JobClient:     Combine output records=1065
+14/12/07 19:35:04 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:35:04 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:35:04 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:35:04 INFO mapred.JobClient:     Spilled Records=2130
+14/12/07 19:35:04 INFO mapred.JobClient:     Map output bytes=75444
+14/12/07 19:35:04 INFO mapred.JobClient:     Combine input records=6287
+14/12/07 19:35:04 INFO mapred.JobClient:     Map output records=6287
+14/12/07 19:35:04 INFO mapred.JobClient:     Reduce input records=1065
+14/12/07 19:35:04 INFO vectorizer.SparseVectorsFromSequenceFiles: Pruning
+14/12/07 19:35:04 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:35:05 INFO mapred.JobClient: Running job: job_201412071932_0006
+14/12/07 19:35:06 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:35:17 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:35:29 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:35:31 INFO mapred.JobClient: Job complete: job_201412071932_0006
+14/12/07 19:35:31 INFO mapred.JobClient: Counters: 17
+14/12/07 19:35:31 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:35:31 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:35:31 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:35:31 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:35:31 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:35:31 INFO mapred.JobClient:     FILE_BYTES_READ=40033
+14/12/07 19:35:31 INFO mapred.JobClient:     HDFS_BYTES_READ=91398
+14/12/07 19:35:31 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=36584
+14/12/07 19:35:31 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=81188
+14/12/07 19:35:31 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:35:31 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:35:31 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:35:31 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:35:31 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:35:31 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:35:31 INFO mapred.JobClient:     Spilled Records=1024
+14/12/07 19:35:31 INFO mapred.JobClient:     Map output bytes=86352
+14/12/07 19:35:31 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:35:31 INFO mapred.JobClient:     Map output records=512
+14/12/07 19:35:31 INFO mapred.JobClient:     Reduce input records=512
+14/12/07 19:35:31 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:35:32 INFO mapred.JobClient: Running job: job_201412071932_0007
+14/12/07 19:35:33 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:35:44 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:35:56 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:35:58 INFO mapred.JobClient: Job complete: job_201412071932_0007
+14/12/07 19:35:58 INFO mapred.JobClient: Counters: 17
+14/12/07 19:35:58 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:35:58 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:35:58 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:35:58 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:35:58 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:35:58 INFO mapred.JobClient:     FILE_BYTES_READ=77484
+14/12/07 19:35:58 INFO mapred.JobClient:     HDFS_BYTES_READ=81188
+14/12/07 19:35:58 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=155000
+14/12/07 19:35:58 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=81188
+14/12/07 19:35:58 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:35:58 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:35:58 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:35:58 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:35:58 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:35:58 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:35:58 INFO mapred.JobClient:     Spilled Records=1024
+14/12/07 19:35:58 INFO mapred.JobClient:     Map output bytes=76242
+14/12/07 19:35:58 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:35:58 INFO mapred.JobClient:     Map output records=512
+14/12/07 19:35:58 INFO mapred.JobClient:     Reduce input records=512
+14/12/07 19:35:58 INFO common.HadoopUtil: Deleting /data/tweets-vectors/tf-vectors-partial
+14/12/07 19:35:58 INFO common.HadoopUtil: Deleting /data/tweets-vectors/tf-vectors-toprune
+14/12/07 19:35:58 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:35:59 INFO mapred.JobClient: Running job: job_201412071932_0008
+14/12/07 19:36:00 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:36:11 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:36:23 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:36:25 INFO mapred.JobClient: Job complete: job_201412071932_0008
+14/12/07 19:36:25 INFO mapred.JobClient: Counters: 17
+14/12/07 19:36:25 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:36:25 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:36:25 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:36:25 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:36:25 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:36:25 INFO mapred.JobClient:     FILE_BYTES_READ=99237
+14/12/07 19:36:25 INFO mapred.JobClient:     HDFS_BYTES_READ=81188
+14/12/07 19:36:25 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=155000
+14/12/07 19:36:25 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=81188
+14/12/07 19:36:25 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:36:25 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:36:25 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:36:25 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:36:25 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:36:25 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:36:25 INFO mapred.JobClient:     Spilled Records=1024
+14/12/07 19:36:25 INFO mapred.JobClient:     Map output bytes=76242
+14/12/07 19:36:25 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:36:25 INFO mapred.JobClient:     Map output records=512
+14/12/07 19:36:25 INFO mapred.JobClient:     Reduce input records=512
+14/12/07 19:36:25 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:36:25 INFO mapred.JobClient: Running job: job_201412071932_0009
+14/12/07 19:36:26 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:36:38 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:36:50 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:36:52 INFO mapred.JobClient: Job complete: job_201412071932_0009
+14/12/07 19:36:52 INFO mapred.JobClient: Counters: 17
+14/12/07 19:36:52 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:36:52 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:36:52 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:36:52 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:36:52 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:36:52 INFO mapred.JobClient:     FILE_BYTES_READ=77484
+14/12/07 19:36:52 INFO mapred.JobClient:     HDFS_BYTES_READ=81188
+14/12/07 19:36:52 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=155000
+14/12/07 19:36:52 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=81188
+14/12/07 19:36:52 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:36:52 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:36:52 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:36:52 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:36:52 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:36:52 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:36:52 INFO mapred.JobClient:     Spilled Records=1024
+14/12/07 19:36:52 INFO mapred.JobClient:     Map output bytes=76242
+14/12/07 19:36:52 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:36:52 INFO mapred.JobClient:     Map output records=512
+14/12/07 19:36:52 INFO mapred.JobClient:     Reduce input records=512
+14/12/07 19:36:52 INFO common.HadoopUtil: Deleting /data/tweets-vectors/partial-vectors-0
+14/12/07 19:36:52 INFO driver.MahoutDriver: Program took 243008 ms (Minutes: 4.050133333333333)
+-------list directory tweets-vectors ---
+Found 7 items
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:35 /data/tweets-vectors/df-count
+-rw-r--r--   1 balasesh supergroup      19866 2014-12-07 19:33 /data/tweets-vectors/dictionary.file-0
+-rw-r--r--   1 balasesh supergroup      21573 2014-12-07 19:35 /data/tweets-vectors/frequency.file-0
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:35 /data/tweets-vectors/tf-vectors
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:36 /data/tweets-vectors/tfidf-vectors
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:33 /data/tweets-vectors/tokenized-documents
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:33 /data/tweets-vectors/wordcount
+ ------Using mahout to splits the sets into two sets: traing and testing sets ---
+CLASSPATH with MAHOUT=:/util/mahout/mahout-distribution-0.8/src/conf
+MAHOUT_LOCAL is not set; adding HADOOP_CONF_DIR to classpath.
+CLASSPATH with HADOOP=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config
+CLASSPATH with JAVA=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config:/util/java/jdk1.6.0_22//lib/tools.jar
+Running on hadoop, using /util/hadoop/hadoop-0.20.1/bin/hadoop and HADOOP_CONF_DIR=/ifs/user/balasesh/assgn4/mahout/config
+MAHOUT-JOB: /util/mahout/mahout-distribution-0.8/examples/target/mahout-examples-0.8-job.jar
+14/12/07 19:36:57 INFO common.AbstractJob: Command line arguments: {--clustering=null, --clusters=[/data/tweets-seq/parsedtext-kmeans-clusters], --convergenceDelta=[0.5], --distanceMeasure=[org.apache.mahout.common.distance.CosineDistanceMeasure], --endPhase=[2147483647], --input=[/data/tweets-vectors/tfidf-vectors/], --maxIter=[10], --method=[mapreduce], --numClusters=[7], --output=[/data/parsedtext-kmeans], --overwrite=null, --startPhase=[0], --tempDir=[temp]}
+14/12/07 19:36:57 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+14/12/07 19:36:57 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
+14/12/07 19:36:57 INFO compress.CodecPool: Got brand-new compressor
+14/12/07 19:36:57 INFO kmeans.RandomSeedGenerator: Wrote 7 Klusters to /data/tweets-seq/parsedtext-kmeans-clusters/part-randomSeed
+14/12/07 19:36:57 INFO kmeans.KMeansDriver: Input: /data/tweets-vectors/tfidf-vectors Clusters In: /data/tweets-seq/parsedtext-kmeans-clusters/part-randomSeed Out: /data/parsedtext-kmeans Distance: org.apache.mahout.common.distance.CosineDistanceMeasure
+14/12/07 19:36:57 INFO kmeans.KMeansDriver: convergence: 0.5 max Iterations: 10
+14/12/07 19:36:57 INFO compress.CodecPool: Got brand-new decompressor
+14/12/07 19:36:58 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:36:59 INFO mapred.JobClient: Running job: job_201412071932_0010
+14/12/07 19:37:00 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:37:11 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:37:23 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:37:25 INFO mapred.JobClient: Job complete: job_201412071932_0010
+14/12/07 19:37:25 INFO mapred.JobClient: Counters: 17
+14/12/07 19:37:25 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:37:25 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:37:25 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:37:25 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:37:25 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:37:25 INFO mapred.JobClient:     FILE_BYTES_READ=44282
+14/12/07 19:37:25 INFO mapred.JobClient:     HDFS_BYTES_READ=89482
+14/12/07 19:37:25 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=88596
+14/12/07 19:37:25 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=43854
+14/12/07 19:37:25 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:37:25 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:37:25 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:37:25 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:37:25 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:37:25 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:37:25 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:37:25 INFO mapred.JobClient:     Map output bytes=44248
+14/12/07 19:37:25 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:37:25 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:37:25 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:37:25 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:37:26 INFO mapred.JobClient: Running job: job_201412071932_0011
+14/12/07 19:37:27 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:37:38 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:37:50 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:37:52 INFO mapred.JobClient: Job complete: job_201412071932_0011
+14/12/07 19:37:52 INFO mapred.JobClient: Counters: 17
+14/12/07 19:37:52 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:37:52 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:37:52 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:37:52 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:37:52 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:37:52 INFO mapred.JobClient:     FILE_BYTES_READ=84821
+14/12/07 19:37:52 INFO mapred.JobClient:     HDFS_BYTES_READ=169284
+14/12/07 19:37:52 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=169674
+14/12/07 19:37:52 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=42568
+14/12/07 19:37:52 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:37:52 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:37:52 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:37:52 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:37:52 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:37:52 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:37:52 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:37:52 INFO mapred.JobClient:     Map output bytes=84787
+14/12/07 19:37:52 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:37:52 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:37:52 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:37:52 INFO kmeans.KMeansDriver: Clustering data
+14/12/07 19:37:52 INFO kmeans.KMeansDriver: Running Clustering
+14/12/07 19:37:52 INFO kmeans.KMeansDriver: Input: /data/tweets-vectors/tfidf-vectors Clusters In: /data/parsedtext-kmeans Out: /data/parsedtext-kmeans Distance: org.apache.mahout.common.distance.CosineDistanceMeasure@27ed688f
+14/12/07 19:37:53 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:37:54 INFO mapred.JobClient: Running job: job_201412071932_0012
+14/12/07 19:37:55 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:38:08 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:38:10 INFO mapred.JobClient: Job complete: job_201412071932_0012
+14/12/07 19:38:10 INFO mapred.JobClient: Counters: 6
+14/12/07 19:38:10 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:38:10 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:38:10 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:38:10 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:38:10 INFO mapred.JobClient:     HDFS_BYTES_READ=123950
+14/12/07 19:38:10 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=73979
+14/12/07 19:38:10 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:38:10 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:38:10 INFO mapred.JobClient:     Spilled Records=0
+14/12/07 19:38:10 INFO driver.MahoutDriver: Program took 73007 ms (Minutes: 1.2167833333333333)
+ ------Dump the results to file---
+CLASSPATH with MAHOUT=:/util/mahout/mahout-distribution-0.8/src/conf
+MAHOUT_LOCAL is not set; adding HADOOP_CONF_DIR to classpath.
+CLASSPATH with HADOOP=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config
+CLASSPATH with JAVA=:/util/mahout/mahout-distribution-0.8/src/conf:/ifs/user/balasesh/assgn4/mahout/config:/util/java/jdk1.6.0_22//lib/tools.jar
+Running on hadoop, using /util/hadoop/hadoop-0.20.1/bin/hadoop and HADOOP_CONF_DIR=/ifs/user/balasesh/assgn4/mahout/config
+MAHOUT-JOB: /util/mahout/mahout-distribution-0.8/examples/target/mahout-examples-0.8-job.jar
+14/12/07 19:38:14 INFO common.AbstractJob: Command line arguments: {--dictionary=[/data/tweets-vectors/dictionary.file-0], --dictionaryType=[sequencefile], --distanceMeasure=[org.apache.mahout.common.distance.CosineDistanceMeasure], --endPhase=[2147483647], --evaluate=null, --input=[/data/parsedtext-kmeans/clusters-*-final], --numWords=[20], --output=[./cluster-output.txt], --outputFormat=[TEXT], --pointsDir=[/data/parsedtext-kmeans/clusteredPoints], --startPhase=[0], --substring=[100], --tempDir=[temp]}
+14/12/07 19:38:15 INFO common.AbstractJob: Command line arguments: {--clusteredPoints=[/data/parsedtext-kmeans/clusteredPoints], --distanceMeasure=[org.apache.mahout.common.distance.CosineDistanceMeasure], --endPhase=[2147483647], --input=[/data/parsedtext-kmeans/clusters-*-final], --maxIter=[5], --method=[mapreduce], --output=[tmp/representative], --startPhase=[0], --tempDir=[temp]}
+14/12/07 19:38:15 INFO evaluation.RepresentativePointsDriver: Representative Points Iteration 0
+14/12/07 19:38:15 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:38:16 INFO mapred.JobClient: Running job: job_201412071932_0013
+14/12/07 19:38:17 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:38:29 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:38:41 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:38:43 INFO mapred.JobClient: Job complete: job_201412071932_0013
+14/12/07 19:38:43 INFO mapred.JobClient: Counters: 17
+14/12/07 19:38:43 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:38:43 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:38:43 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:38:43 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:38:43 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:38:43 INFO mapred.JobClient:     FILE_BYTES_READ=888
+14/12/07 19:38:43 INFO mapred.JobClient:     HDFS_BYTES_READ=115819
+14/12/07 19:38:43 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=1808
+14/12/07 19:38:43 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=21766
+14/12/07 19:38:43 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:38:43 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:38:43 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:38:43 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:38:43 INFO mapred.JobClient:     Reduce shuffle bytes=888
+14/12/07 19:38:43 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:38:43 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:38:43 INFO mapred.JobClient:     Map output bytes=866
+14/12/07 19:38:43 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:38:43 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:38:43 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:38:43 INFO evaluation.RepresentativePointsDriver: Representative Points Iteration 1
+14/12/07 19:38:43 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:38:44 INFO mapred.JobClient: Running job: job_201412071932_0014
+14/12/07 19:38:45 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:38:56 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:39:08 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:39:10 INFO mapred.JobClient: Job complete: job_201412071932_0014
+14/12/07 19:39:10 INFO mapred.JobClient: Counters: 17
+14/12/07 19:39:10 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:39:10 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:39:10 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:39:10 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:39:10 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:39:10 INFO mapred.JobClient:     FILE_BYTES_READ=950
+14/12/07 19:39:10 INFO mapred.JobClient:     HDFS_BYTES_READ=117511
+14/12/07 19:39:10 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=1932
+14/12/07 19:39:10 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=22732
+14/12/07 19:39:10 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:39:10 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:39:10 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:39:10 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:39:10 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:39:10 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:39:10 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:39:10 INFO mapred.JobClient:     Map output bytes=926
+14/12/07 19:39:10 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:39:10 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:39:10 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:39:10 INFO evaluation.RepresentativePointsDriver: Representative Points Iteration 2
+14/12/07 19:39:10 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:39:11 INFO mapred.JobClient: Running job: job_201412071932_0015
+14/12/07 19:39:12 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:39:23 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:39:35 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:39:37 INFO mapred.JobClient: Job complete: job_201412071932_0015
+14/12/07 19:39:37 INFO mapred.JobClient: Counters: 17
+14/12/07 19:39:37 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:39:37 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:39:37 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:39:37 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:39:37 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:39:37 INFO mapred.JobClient:     FILE_BYTES_READ=853
+14/12/07 19:39:37 INFO mapred.JobClient:     HDFS_BYTES_READ=119443
+14/12/07 19:39:37 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=1738
+14/12/07 19:39:37 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=23562
+14/12/07 19:39:37 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:39:37 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:39:37 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:39:37 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:39:37 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:39:37 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:39:37 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:39:37 INFO mapred.JobClient:     Map output bytes=830
+14/12/07 19:39:37 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:39:37 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:39:37 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:39:37 INFO evaluation.RepresentativePointsDriver: Representative Points Iteration 3
+14/12/07 19:39:37 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:39:38 INFO mapred.JobClient: Running job: job_201412071932_0016
+14/12/07 19:39:39 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:39:50 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:40:02 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:40:04 INFO mapred.JobClient: Job complete: job_201412071932_0016
+14/12/07 19:40:04 INFO mapred.JobClient: Counters: 17
+14/12/07 19:40:04 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:40:04 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:40:04 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:40:04 INFO mapred.JobClient:     Data-local map tasks=1
+14/12/07 19:40:04 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:40:04 INFO mapred.JobClient:     FILE_BYTES_READ=813
+14/12/07 19:40:04 INFO mapred.JobClient:     HDFS_BYTES_READ=121103
+14/12/07 19:40:04 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=1658
+14/12/07 19:40:04 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=24354
+14/12/07 19:40:04 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:40:04 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:40:04 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:40:04 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:40:04 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:40:04 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:40:04 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:40:04 INFO mapred.JobClient:     Map output bytes=792
+14/12/07 19:40:04 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:40:04 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:40:04 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:40:04 INFO evaluation.RepresentativePointsDriver: Representative Points Iteration 4
+14/12/07 19:40:04 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 19:40:05 INFO mapred.JobClient: Running job: job_201412071932_0017
+14/12/07 19:40:06 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 19:40:18 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 19:40:30 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 19:40:32 INFO mapred.JobClient: Job complete: job_201412071932_0017
+14/12/07 19:40:32 INFO mapred.JobClient: Counters: 17
+14/12/07 19:40:32 INFO mapred.JobClient:   Job Counters 
+14/12/07 19:40:32 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 19:40:32 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 19:40:32 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 19:40:32 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 19:40:32 INFO mapred.JobClient:     FILE_BYTES_READ=1002
+14/12/07 19:40:32 INFO mapred.JobClient:     HDFS_BYTES_READ=122687
+14/12/07 19:40:32 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=2036
+14/12/07 19:40:32 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=25331
+14/12/07 19:40:32 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 19:40:32 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 19:40:32 INFO mapred.JobClient:     Combine output records=0
+14/12/07 19:40:32 INFO mapred.JobClient:     Map input records=512
+14/12/07 19:40:32 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 19:40:32 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 19:40:32 INFO mapred.JobClient:     Spilled Records=14
+14/12/07 19:40:32 INFO mapred.JobClient:     Map output bytes=977
+14/12/07 19:40:32 INFO mapred.JobClient:     Combine input records=0
+14/12/07 19:40:32 INFO mapred.JobClient:     Map output records=7
+14/12/07 19:40:32 INFO mapred.JobClient:     Reduce input records=7
+14/12/07 19:40:32 INFO evaluation.ClusterEvaluator: Scaled Inter-Cluster Density = NaN
+14/12/07 19:40:32 INFO evaluation.ClusterEvaluator: Average Intra-Cluster Density = 0.0
+14/12/07 19:40:32 INFO clustering.ClusterDumper: Wrote 7 clusters
+14/12/07 19:40:32 INFO driver.MahoutDriver: Program took 137795 ms (Minutes: 2.2965833333333334)
+Found 2 items
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 19:37 /data/parsedtext-kmeans/clusteredPoints/_logs
+-rw-r--r--   1 balasesh supergroup      73979 2014-12-07 19:38 /data/parsedtext-kmeans/clusteredPoints/part-m-00000
+14/12/07 19:40:37 INFO common.AbstractJob: Command line arguments: {--endPhase=[2147483647], --input=[/data/parsedtext-kmeans/clusteredPoints/part-m-00000], --startPhase=[0], --tempDir=[temp]}
+14/12/07 19:40:37 INFO driver.MahoutDriver: Program took 709 ms (Minutes: 0.011833333333333333)
+stop jobtracker (mapred)
+stopping jobtracker
+k08n36s02: stopping tasktracker
+k08n37s02: stopping tasktracker
+stop dfs
+stopping namenode
+k08n36s02: stopping datanode
+k08n37s02: stopping datanode
+k08n36s02: stopping secondarynamenode
+Clean up
+Number of Hadoop nodes specified by user: 2
+Received 2 nodes from PBS
+Clean up node: k08n36s02
+rm -rf /scratch/hadoop-balasesh/data /scratch/hadoop-balasesh/log
+Clean up node: k08n37s02
+rm -rf /scratch/hadoop-balasesh/data /scratch/hadoop-balasesh/log
+

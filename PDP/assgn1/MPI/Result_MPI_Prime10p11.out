@@ -1,0 +1,18 @@
+SLURN Enviroment Variables:
+Job ID = 2902462
+Job Name = MPI_Prime10P11
+Job Node List = f16n03
+Number of Nodes = 1
+Tasks per Nodes = 16
+CPUs per task = 
+/scratch/jobid = /scratch/2902462
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/assgn1/MPI
+
+Currently Loaded Modulefiles:
+  1) null              3) intel/13.1
+  2) modules           4) intel-mpi/5.0.1
+The largest prime is : 1215752191
+The number of prime numbers are 61207752
+The time is: 1034.100000
+All Dones!

@@ -1,0 +1,1 @@
+Please run the Project2.m file one and all other files will get invoked directly. No need to run the train or test files individually. 

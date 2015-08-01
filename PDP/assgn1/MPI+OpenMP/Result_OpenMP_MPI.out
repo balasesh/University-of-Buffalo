@@ -1,0 +1,18 @@
+SLURN Enviroment Variables:
+Job ID = 3007703
+Job Name = FISBATCH
+Job Node List = d07n33s02,d16n02
+Number of Nodes = 2
+Tasks per Nodes = 8
+CPUs per task = 
+/scratch/jobid = /scratch/3007703
+submit Host = k07n04s01
+Subimt Directory = /ifs/user/balasesh/assgn1/MPI+OpenMP
+
+Currently Loaded Modulefiles:
+  1) null              3) intel/13.1
+  2) modules           4) intel-mpi/5.0.1
+The largest prime is : 99991
+The number of prime numbers are 9592
+The time is: 0.010000
+All Dones!

@@ -1,0 +1,16 @@
+SLURM Environment Variables:
+Job ID = 3043979
+Job Name = Prime_Cuda
+Job Node List = k06n21s02
+Number of Nodes = 1
+Tasks per node = 1
+CPUs per task = 
+/scratch/jobid = /scratch/3043979
+Submit Host = k07n14
+Submit Directory = /ifs/user/balasesh/assgn3/Prime/CUDA
+
+
+The largest prime number is: 99991
+The number of prime numbers are: 9592
+The time is: 1.340000
+All Done!

@@ -1,0 +1,15 @@
+SLURN Enviroment Variables:
+Job ID = 2883789
+Job Name = OpenMP_Prime
+Job Node List = f07n[09,17,26],k07n28
+Number of Nodes = 4
+Tasks per Nodes = 8
+CPUs per task = 
+/scratch/jobid = /scratch/2883789
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/assgn1/OpenMP
+
+The Largest prime is 999999937
+The Number of prime numbers are 50847534
+The time is: 663.110000
+All Dones!

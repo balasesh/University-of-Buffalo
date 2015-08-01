@@ -1,0 +1,16 @@
+SLURM Environment Variables:
+Job ID = 3043981
+Job Name = Sort_Cuda
+Job Node List = k06n21s02
+Number of Nodes = 1
+Tasks per node = 1
+CPUs per task = 
+/scratch/jobid = /scratch/3043981
+Submit Host = k07n14
+Submit Directory = /ifs/user/balasesh/assgn3/Sort/CUDA
+
+
+
+All Values Sorted
+The time is: 2.830000
+All Done!

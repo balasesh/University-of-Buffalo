@@ -1,0 +1,13 @@
+SLURN Enviroment Variables:
+Job ID = 2945839
+Job Name = OpenMP_Sort
+Job Node List = f16n38
+Number of Nodes = 1
+Tasks per Nodes = 8
+CPUs per task = 
+/scratch/jobid = /scratch/2945839
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/Project 2/OpenMP
+
+The time is: 0.160000
+All Dones!

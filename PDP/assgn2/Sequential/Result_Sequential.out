@@ -1,0 +1,13 @@
+SLURN Enviroment Variables:
+Job ID = 2946225
+Job Name = Sequential
+Job Node List = d07n33s01
+Number of Nodes = 1
+Tasks per Nodes = 1
+CPUs per task = 
+/scratch/jobid = /scratch/2946225
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/Project 2/Sequential
+
+The time is: 1.710000
+All Dones!

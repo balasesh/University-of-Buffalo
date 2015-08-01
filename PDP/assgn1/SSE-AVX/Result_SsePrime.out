@@ -1,0 +1,14 @@
+SLURN Enviroment Variables:
+Job ID = 2902158
+Job Name = SSEPrime
+Job Node List = d07n04s01
+Number of Nodes = 1
+Tasks per Nodes = 4
+/scratch/jobid = /scratch/2902158
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/assgn1/SSE-AVX
+
+The time is: 8626.010000
+The number of prime number are 50847534
+The Biggest prime is 999999937
+All Dones!

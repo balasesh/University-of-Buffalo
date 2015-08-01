@@ -1,0 +1,24 @@
+SLURN Enviroment Variables:
+Job ID = 2945831
+Job Name = MPI_Sort
+Job Node List = f16n38
+Number of Nodes = 1
+Tasks per Nodes = 8
+CPUs per task = 
+/scratch/jobid = /scratch/2945831
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/Project 2/MPI
+
+Currently Loaded Modulefiles:
+  1) null              3) intel/13.1
+  2) modules           4) intel-mpi/5.0.1
+
+
+
+
+
+
+
+The time is: 0.020000
+
+All Dones!

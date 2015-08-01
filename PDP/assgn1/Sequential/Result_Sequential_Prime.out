@@ -1,0 +1,15 @@
+SLURN Enviroment Variables:
+Job ID = 2902404
+Job Name = Sequential_Prime
+Job Node List = d07n07s02
+Number of Nodes = 1
+Tasks per Nodes = 4
+CPUs per task = 
+/scratch/jobid = /scratch/2902404
+submit Host = k07n14
+Subimt Directory = /ifs/user/balasesh/assgn1/Sequential
+
+The Largest prime is 999999937
+The Number of prime numbers are 50847534
+The time is: 9219.320000
+All Dones!

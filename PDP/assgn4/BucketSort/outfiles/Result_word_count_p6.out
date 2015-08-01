@@ -1,0 +1,119 @@
+SLURM Environment Variables:
+Job ID = 3096369
+Job Name = word_count
+Job Node List = d07n33s[01-02]
+Number of Nodes = 2
+Tasks per node = 8
+CPUs per task = 
+/scratch/jobid = /scratch/3096369
+Submit Host = k07n14
+Submit Directory = /ifs/user/balasesh/assgn4/Test
+
+
+Currently Loaded Modulefiles:
+  1) null                          4) hadoop/0.20.1
+  2) modules                       5) myhadoop/0.2a/hadoop-0.20.1
+  3) java/j2sdk/1.6.0_22
+MY_HADOOP_HOME=/util/myhadoop/myHadoop-0.2a
+HADOOP_HOME=/util/hadoop/hadoop-0.20.1
+MyHadoop config directory=/ifs/user/balasesh/assgn4/Test/config
+Set up the configurations for myHadoop
+Number of nodes in nodelist=2
+Number of Hadoop nodes requested: 2
+Generation Hadoop configuration in directory: /ifs/user/balasesh/assgn4/Test/config
+Not persisting HDFS state
+Received 2 nodes from PBS
+Master is: d07n33s01
+Configuring node: d07n33s01
+rm -rf /scratch/hadoop-balasesh/log; mkdir -p /scratch/hadoop-balasesh/log
+rm -rf /scratch/hadoop-balasesh/data; mkdir -p /scratch/hadoop-balasesh/data
+Configuring node: d07n33s02
+rm -rf /scratch/hadoop-balasesh/log; mkdir -p /scratch/hadoop-balasesh/log
+rm -rf /scratch/hadoop-balasesh/data; mkdir -p /scratch/hadoop-balasesh/data
+
+Format HDFS
+14/12/07 15:33:51 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = d07n33s01/10.104.7.33
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 0.20.1
+STARTUP_MSG:   build = http://svn.apache.org/repos/asf/hadoop/common/tags/release-0.20.1-rc1 -r 810220; compiled by 'oom' on Tue Sep  1 20:55:56 UTC 2009
+************************************************************/
+14/12/07 15:33:51 INFO namenode.FSNamesystem: fsOwner=balasesh,cse603f14,u2
+14/12/07 15:33:51 INFO namenode.FSNamesystem: supergroup=supergroup
+14/12/07 15:33:51 INFO namenode.FSNamesystem: isPermissionEnabled=true
+14/12/07 15:33:51 INFO common.Storage: Image file of size 98 saved in 0 seconds.
+14/12/07 15:33:52 INFO common.Storage: Storage directory /scratch/hadoop-balasesh/data/dfs/name has been successfully formatted.
+14/12/07 15:33:52 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at d07n33s01/10.104.7.33
+************************************************************/
+
+start dfs
+starting namenode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s01-namenode-d07n33s01.out
+d07n33s01: starting datanode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s01-datanode-d07n33s01.out
+d07n33s02: starting datanode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s02-datanode-d07n33s02.out
+d07n33s01: starting secondarynamenode, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s01-secondarynamenode-d07n33s01.out
+
+start jobtracker (mapred)
+starting jobtracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s01-jobtracker-d07n33s01.out
+d07n33s01: starting tasktracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s01-tasktracker-d07n33s01.out
+d07n33s02: starting tasktracker, logging to /scratch/hadoop-balasesh/log/hadoop-balasesh_d07n33s02-tasktracker-d07n33s02.out
+
+copy file to dfs
+ls files in dfs
+ls: Cannot access .: No such file or directory.
+
+run computation
+14/12/07 15:34:50 WARN mapred.JobClient: Use GenericOptionsParser for parsing the arguments. Applications should implement Tool for the same.
+14/12/07 15:34:50 INFO input.FileInputFormat: Total input paths to process : 1
+14/12/07 15:34:50 INFO mapred.JobClient: Running job: job_201412071534_0001
+14/12/07 15:34:51 INFO mapred.JobClient:  map 0% reduce 0%
+14/12/07 15:35:01 INFO mapred.JobClient:  map 100% reduce 0%
+14/12/07 15:35:17 INFO mapred.JobClient:  map 100% reduce 100%
+14/12/07 15:35:19 INFO mapred.JobClient: Job complete: job_201412071534_0001
+14/12/07 15:35:19 INFO mapred.JobClient: Counters: 17
+14/12/07 15:35:19 INFO mapred.JobClient:   Job Counters 
+14/12/07 15:35:19 INFO mapred.JobClient:     Launched reduce tasks=1
+14/12/07 15:35:19 INFO mapred.JobClient:     Rack-local map tasks=1
+14/12/07 15:35:19 INFO mapred.JobClient:     Launched map tasks=1
+14/12/07 15:35:19 INFO mapred.JobClient:   FileSystemCounters
+14/12/07 15:35:19 INFO mapred.JobClient:     FILE_BYTES_READ=20000030
+14/12/07 15:35:19 INFO mapred.JobClient:     HDFS_BYTES_READ=15000000
+14/12/07 15:35:19 INFO mapred.JobClient:     FILE_BYTES_WRITTEN=30000068
+14/12/07 15:35:19 INFO mapred.JobClient:     HDFS_BYTES_WRITTEN=11000000
+14/12/07 15:35:19 INFO mapred.JobClient:   Map-Reduce Framework
+14/12/07 15:35:19 INFO mapred.JobClient:     Reduce input groups=0
+14/12/07 15:35:19 INFO mapred.JobClient:     Combine output records=0
+14/12/07 15:35:19 INFO mapred.JobClient:     Map input records=1
+14/12/07 15:35:19 INFO mapred.JobClient:     Reduce shuffle bytes=0
+14/12/07 15:35:19 INFO mapred.JobClient:     Reduce output records=0
+14/12/07 15:35:19 INFO mapred.JobClient:     Spilled Records=3000000
+14/12/07 15:35:19 INFO mapred.JobClient:     Map output bytes=8000000
+14/12/07 15:35:19 INFO mapred.JobClient:     Combine input records=0
+14/12/07 15:35:19 INFO mapred.JobClient:     Map output records=1000000
+14/12/07 15:35:19 INFO mapred.JobClient:     Reduce input records=1000000
+The time is: 28
+ls files in dfs
+Found 2 items
+drwxr-xr-x   - balasesh supergroup          0 2014-12-07 15:34 /user/balasesh/output_wordcount/_logs
+-rw-r--r--   1 balasesh supergroup   11000000 2014-12-07 15:35 /user/balasesh/output_wordcount/part-r-00000
+Copy output from HDFS to local directory
+stop jobtracker (mapred)
+stopping jobtracker
+d07n33s01: stopping tasktracker
+d07n33s02: stopping tasktracker
+stop dfs
+stopping namenode
+d07n33s01: stopping datanode
+d07n33s02: stopping datanode
+d07n33s01: stopping secondarynamenode
+Clean up
+Number of Hadoop nodes specified by user: 2
+Received 2 nodes from PBS
+Clean up node: d07n33s01
+rm -rf /scratch/hadoop-balasesh/data /scratch/hadoop-balasesh/log
+Clean up node: d07n33s02
+rm -rf /scratch/hadoop-balasesh/data /scratch/hadoop-balasesh/log
+
